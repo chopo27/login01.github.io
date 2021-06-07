@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입폼</title>
+        <link href="css/050.css" rel="stylesheet">
+    <style></style>
+    
+
+</head>
+<body>
+    <div id="form"> <!-- id명은 여러번 사용못함 (고유의 이름) 다른 id에 같은 이름을 지정해줄수 없음, class는 가능 -->
+        <form action="" method="POST" autocomplete="dff"> <!-- autocomplete : 자동완성은 기본값이기 때문에 off를 해줘서 비활성화해준다 -->
+            <h2>회원가입 양식</h2>
+            <fieldset>
+                <legend>개인정보</legend>
+                <div>
+                    <label for="name">이름</label>
+                    <input type="text" id="name" placeholder="이름을 입력해주세요" required autofocus>
+                </div>
+                      <!-- id는 문서 안에서 중복사용 불가
+                           자바스크립트 프로그램 안에서 적용시키기 위해 사용 -->
+
+                      <!-- placeholder : 입력창 안에 작성하는 힌트, 도움말
+                           required : 필수사항
+                           autofocus : 입력창안에 커서가 자동으로 적용 -->
+
+                <div>
+                    <label for="pw">비밀번호</label>
+                    <input type="password" id="pw"placeholder="비밀번호를 입력해주세요">
+                </div>
+
+                <div class="address">
+                    <label>주소</label>
+                    <input type="button" value="주소찾기">
+                    <input type="text" name="addr" id="addr1">
+                    <input type="text" name="addr" id="addr2" placeholder="상세주소">
+                </div><!-- name을 동일하게 입력하면 한세트로 묶어 적용시킬수 있음 -->
+
+                <div>
+                    <label>성별</label>
+                    <input type="radio" name="gender" value="man"><span>남자</span>
+                    <input type="radio" name="gender" value="woman"><span>여자</span>
+                </div><!-- value는 영역 구분을 시켜줌 -->
+                      <!-- name : 그룹 묶음 사용, 프로그램쪽에서 name값을 가져올 수 있음
+                           value: 해당하는 태그의 값
+                            *name : 그린컴퓨터아카데미
+                            *value : 501호
+                           
+                           type="radio" : 1가지 선택
+                           type="checkbox" : 다중선택(1개이상)-->
+
+            <div class="drank">
+                <label>음료</label>
+                <div>
+                    <input id="coffee" type="checkbox" name="drnak" value="coffee">
+                    <label for="coffee">커피</label> 
+                </div><!-- label과 span 두가지 방법이 있음 -->
+                <!-- <label>
+                    <input type="checkbox">
+                    <span>커피</span>
+                </label> --> 
+                <div>
+                    <input id="icetea" type="checkbox" name="drank" value="icetea">
+                    <label for="icetea">아이스티</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="drank" value="latte">
+                    <label>라떼</label> <!-- id명과 for의명을 넣으면 글씨만 클릭해도 체크박스에 체크가 됨 -->
+                </div>
+            </div>
+
+            <div>
+                <label>기타의견</label>
+                <textarea rows="5" cols="40"></textarea> <!-- textarea : 글 쓸수 있는 영역 -->
+            </div><!-- rows:세로로 cols:가로로 글자수가 넘어가면 스크롤바가 생김 -->
+
+                <div>
+                    <label>가입경로</label>
+                    <select> <!-- 숨김창 -->
+                        <option>검색</option>
+                        <option>카카오</option>
+                        <option>인스타그램</option>
+                        <option>기타</option>
+                        <optgroup label="검색경로"> <!-- label을 입력해주면 굵은글씨로 영역구분지어줄수있음 -->
+                            <option>네이버</option>
+                            <option>다음</option>
+                            <option>구글</option>
+                        </optgroup><!-- optgroup : select 안에서 다른 경로의 옵션을 넣을 수 있음 옵션안에 옵션추가-->
+                    </select>
+                </div>
+
+                <div class="button">
+                    <input type="reset" value="다시쓰기"> 
+                    <input type="submit" value="가입하기"> 
+                </div> <!-- reset: 취소, 다시쓰기 (정보다 다 지워짐)
+                            submit: 동의, 제출, 확인
+                            button: 그냥 버튼 -->
+
+            </fieldset>
+        </form>
+
+    </div>
+</body>
+</html>
